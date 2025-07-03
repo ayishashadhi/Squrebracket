@@ -113,14 +113,10 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 80px 40px;
+  padding-top: 60px;
   text-align: center;
 }
-.services-content {
-  max-width: 1200px;
-  width: 100%;
-  margin: 0 auto;
-}
+
 
 
 
@@ -203,12 +199,7 @@ h2 span.typing {
   transform: translateY(-10px);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
 }
-.service-card:last-child {
-  margin-right: -80px; /* Adjust to overlap image more or less */
-}
-.services-grid {
-  margin-right: -60px;
-}
+
 
 
 .icon-circle {
@@ -290,7 +281,7 @@ h2 span.typing {
   -webkit-mask-image: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
   opacity: 0.9;
 }
-@media (max-width: 768px) {
+@media (max-width: 1212px) {
   /* Stack cards vertically */
   .services-grid {
     flex-direction: column;
@@ -304,15 +295,9 @@ h2 span.typing {
     max-width: 400px;
   }
 
-  /* Make heading more compact */
-  .services-section {
-    padding: 60px 20px;
-    text-align: center;
-  }
+ 
 
-  .services-content {
-    max-width: 100%;
-  }
+ 
 
   /* Make text smaller */
   h2#typing-heading {
