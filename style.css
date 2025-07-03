@@ -1,0 +1,331 @@
+/* RESET */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* 🌌 Green Gradient Background with Stars */
+body {
+  background: linear-gradient(135deg, #043f2e, #1fbd61, #063e21);
+  background-size: 400% 400%;
+  animation: moveGradient 20s ease infinite;
+  overflow-x: hidden;
+  color: #fff;
+  position: relative;
+}
+
+/* ✨ Stars background */
+.background-stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  z-index: 0;
+}
+
+.background-stars::before,
+.background-stars::after {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  box-shadow:
+    20px 30px white,
+    100px 80px white,
+    150px 120px white,
+    200px 200px white,
+    250px 100px white,
+    300px 180px white,
+    400px 50px white,
+    500px 140px white,
+    600px 90px white,
+    700px 160px white,
+    800px 200px white,
+    850px 50px white,
+    900px 180px white,
+    950px 100px white,
+    1000px 250px white,
+    1100px 70px white,
+    1200px 220px white,
+    1300px 60px white,
+    1400px 190px white,
+    1500px 40px white;
+  animation: twinkle 2s infinite ease-in-out alternate;
+}
+
+@keyframes twinkle {
+  0% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.2); }
+  100% { opacity: 0.4; transform: scale(1); }
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+/* 🌠 Shooting Star */
+.shooting-star {
+  position: fixed;
+  top: 50px;
+  left: -100px;
+  width: 80px;
+  height: 2px;
+  background: white;
+  box-shadow: 0 0 6px white, 0 0 20px white;
+  transform: rotate(45deg);
+  animation: shoot 5s linear infinite;
+  z-index: 1;
+  opacity: 0;
+}
+
+@keyframes shoot {
+  0% {
+    left: -100px;
+    top: 50px;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  50% {
+    left: 100vw;
+    top: 100vh;
+    opacity: 0;
+  }
+  100% {
+    left: 100vw;
+    top: 100vh;
+    opacity: 0;
+  }
+}
+
+/* 💚 Services Section */
+.services-section {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 80px 40px;
+  text-align: center;
+}
+.services-content {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+
+
+
+.services-content .sub-heading {
+  font-size: 14px;
+  color: #aefcc3;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.services-content h2 {
+  font-size: 42px;
+  margin-bottom: 40px;
+  font-weight: 800;
+  background: linear-gradient(to right, #9eeb21, #9eeb21);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #000; /* fallback */
+  position: relative;
+  display: inline-block;
+  animation: glow 3s ease-in-out infinite alternate;
+  text-align: center;
+  line-height: 1.3;
+}
+
+
+/* Typing animation */
+h2 span.typing {
+  border-right: 2px solid #fff;
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  0% { border-color: #fff; }
+  50% { border-color: transparent; }
+  100% { border-color: #fff; }
+}
+
+.services-grid {
+  display: flex;
+  justify-content: center;  /* ⬅️ keeps all cards centered */
+  align-items: stretch;
+  gap: 30px;
+  margin-top: 40px;
+  position: relative;
+  z-index: 3;
+}
+
+
+
+
+.service-card {
+  background: linear-gradient(to bottom, #ffffff, #f0f0f0);
+  border-radius: 20px;
+  padding: 30px 20px;
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  transform: translateY(40px);
+  backdrop-filter: blur(8px);
+  color: #073b28;
+  flex: 1 1 30%;
+  min-width: 250px;
+    flex: 1 1 30%;
+  min-width: 280px;
+  position: relative;
+  z-index: 3; /* Ensure it's above the image */
+}
+
+
+.service-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.2s;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+.service-card:last-child {
+  margin-right: -80px; /* Adjust to overlap image more or less */
+}
+.services-grid {
+  margin-right: -60px;
+}
+
+
+.icon-circle {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 20px;
+  background-color: #96e120;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: white;
+}
+
+.service-card h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #000;
+}
+
+.service-card p {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.6;
+}
+.shooting-star {
+  position: fixed;
+  width: 80px;
+  height: 2px;
+  background: white;
+  box-shadow: 0 0 6px white, 0 0 20px white;
+  transform: rotate(45deg);
+  z-index: 1;
+  animation: shoot 2s linear forwards;
+  opacity: 0.8;
+}
+
+@keyframes shoot {
+  0% {
+    left: -100px;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    left: 120vw;
+    top: 100vh;
+    opacity: 0;
+  }
+}
+@keyframes moveGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.stars-layer-2::before,
+.stars-layer-2::after {
+  transform: scale(0.7);
+  opacity: 0.5;
+  animation-delay: 1s;
+}
+.side-image-wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 40vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.side-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  mask-image: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  -webkit-mask-image: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  opacity: 0.9;
+}
+@media (max-width: 768px) {
+  /* Stack cards vertically */
+  .services-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  /* Adjust card size */
+  .service-card {
+    width: 90%;
+    max-width: 400px;
+  }
+
+  /* Make heading more compact */
+  .services-section {
+    padding: 60px 20px;
+    text-align: center;
+  }
+
+  .services-content {
+    max-width: 100%;
+  }
+
+  /* Make text smaller */
+  h2#typing-heading {
+    font-size: 28px;
+    line-height: 1.3;
+  }
+
+  .sub-heading {
+    font-size: 14px;
+  }
+
+  /* Hide the background image for mobile */
+  .side-image-wrapper {
+    display: none;
+  }
+}
